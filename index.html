@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>拖动排序</title>
+    <link href="./item.css" rel="stylesheet" type="text/css" />
+</head>
+<style>
+    body{
+        height:100%;
+        width:100%;
+        overflow: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    div {
+        padding: 15px;
+    }
+    
+    div p {
+        height: 30px;
+        line-height: 30px;
+    }
+</style>
+
+<body>
+    <div>
+        <p>1、支持排序功能</p>
+        <p>2、支持交互效果</p>
+        <p>3、支持高亮当前选项</p>
+        <p>4、排序时有过渡效果</p>
+    </div>
+    <ul id="topic">
+
+    </ul>
+</body>
+<script src="./item.js"></script>
+<script>
+    var list = ['选项A', '选项B', '选项C', '选项D'];
+    var topic = document.getElementById('topic');
+    new createOption(topic, list, {
+        updata: function() {
+
+        }
+    })
+</script>
+
+</html>

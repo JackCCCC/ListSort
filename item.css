@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.container {
+    position: relative;
+}
+
+.container li {
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(233, 233, 233);
+    transition: box-shadow, top 0.1s linear 0.1s;
+}
+
+.container .activity {
+    background-color: rgba(16, 133, 230, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid transparent;
+    z-index: 1;
+    transition: none;
+}
+
+.container li .po,
+.container li .text,
+.container li .si {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.container li .po {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    background-color: rgb(9, 79, 207);
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    transition: all 0.1s linear 0.1s;
+}
+
+.container li .text {
+    height: 20px;
+    line-height: 20px;
+    margin-left: 15px;
+}
+
+.container .si {
+    float: right;
+    height: 30px;
+    width: 25px;
+    margin: 10px 10px 0 0;
+    background-image: url('./assets/icon/menu-outline.svg');
+    background-repeat: round;
+    line-height: 30px;
+    transition: all 0.1s linear 0.1s;
+}
+
+
+/* .container li .si::after {
+    content: '';
+    background-image: url('./assets/icon/menu-outline.svg');
+    background-size: 20px 50px;
+    height: 50px;
+    width: 20px;
+    line-height: 50px;
+    display: inline-block;
+    transition: all 0.1s linear 0.1s;
+} */
+
+.container .activity .po {
+    background-color: white;
+    color: black;
+}
+
+.container .activity .si {
+    background-image: url('./assets/icon/code-outline.svg');
+}
