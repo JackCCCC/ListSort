@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <title>ClMxII</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            background-color: rgb(139, 247, 236);
+        }
+        
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 0;
+        }
+        
+        .header img {
+            width: 50px;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+        
+        .body {
+            width: 70%;
+            margin: 0 auto;
+            padding: 15px 0;
+            box-sizing: border-box;
+        }
+        
+        .body img {
+            width: 100%;
+        }
+        
+        .footer {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 10px 20px;
+        }
+        
+        .button {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: 999;
+            transform: translateY(-50%);
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            background-color: rgb(219, 39, 39);
+            border-top-left-radius: 50%;
+            border-bottom-left-radius: 50%;
+            display: block;
+        }
+    </style>
+</head>
+<div id="header" class="header">
+    <img src="./assets/img/avatar1.jpg" />
+    <img src="./assets/img/avatar2.jpg" />
+</div>
+<div id="body" class="body">
+    <img src="" />
+    <img src="" />
+</div>
+<div id="footer" class="footer"></div>
+<div id="stop" class="button" onclick="handleStop()">暂停</div>
+<div id="start" class="button" onclick="handleStart()">开始</div>
+<script src="./data.js"></script>
+<script>
+    var timer = setInterval(updataInfo, 1500)
+    var i = 0
+
+    var stopEle = document.getElementById('stop')
+    var startEle = document.getElementById('start')
+    startEle.style.display = 'none'
+
+    var body = document.getElementById('body')
+    var footer = document.getElementById('footer')
+
+    function updataInfo() {
+        body.children[0].src = './assets/img/' + (i + 1) + '.png'
+        footer.innerHTML = dailyRecords[i].info
+        i += 1
+        if (i >= 45) {
+            window.location.href = './love.html'
+        }
+    }
+
+    function handleStop() {
+        startEle.style.display = 'block'
+        stopEle.style.display = 'none'
+        clearInterval(timer)
+    }
+
+    function handleStart() {
+        startEle.style.display = 'none'
+        stopEle.style.display = 'block'
+        timer = setInterval(updataInfo, 1500)
+    }
+</script>
+
+</html>
